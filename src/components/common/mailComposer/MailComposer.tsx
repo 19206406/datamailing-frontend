@@ -1,21 +1,19 @@
-import { $getRoot, $getSelection } from "lexical";
-import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import { $getRoot } from "lexical";
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
-import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
-import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { ListPlugin } from "@lexical/react/LexicalListPlugin";
 import { LinkPlugin } from "@lexical/react/LexicalLinkPlugin";
 import MailComposerViewModel from "./MailComposer.viewmodel";
 import { useState } from "react";
+import ToolbarPlugin from "./ToolbarPlugin";
+import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
 
 const MailComposer = () => {
   const { initialConfig } = MailComposerViewModel();
   const [content, setContent] = useState<string>("");
-  console.log(content); 
 
   const onChange = (editorState: any) => {
     editorState.read(() => {

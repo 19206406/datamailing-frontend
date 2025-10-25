@@ -9,10 +9,12 @@ import {
   AlignRight,
   List,
   ListOrdered,
+  Quote,
   Undo,
   Redo,
   Link,
   Code,
+  Type,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -344,6 +346,9 @@ function LexicalRichTextEditor() {
           <OnChangePlugin onChange={onChange} />
         </div>
       </LexicalComposer>
+
+      {/* Información técnica */}
+      
     </div>
   );
 }

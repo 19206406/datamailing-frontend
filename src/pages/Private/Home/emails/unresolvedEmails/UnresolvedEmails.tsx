@@ -9,6 +9,7 @@ import {
   TooltipProvider,
 } from "@radix-ui/react-tooltip";
 import { TooltipTrigger } from "@/components/ui/tooltip";
+import MailComposer from "@/components/common/mailComposer/MailComposer";
 
 const UnresolvedEmails = () => {
   const {
@@ -111,6 +112,8 @@ const UnresolvedEmails = () => {
             </div>
           </div>
         </div>
+
+        <MailComposer />
       </div>
     );
   }
