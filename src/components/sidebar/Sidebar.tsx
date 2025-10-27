@@ -37,8 +37,8 @@ interface SidebarProps {
 }
 
 const defaultItems: SidebarItem[] = [
-  { title: "Dashboard", icon: Home, href: "/#" },
-  { title: "Usuarios", icon: User, href: "/#" },
+  { title: "Dashboard", icon: Home, href: "/tablero/home" },
+  { title: "Usuarios", icon: User, href: "/tablero/users-managament" },
   { title: "Documentos", icon: FileText, href: "/#" },
   { title: "Reportes", icon: BarChart3, href: "/#", badge: "3" },
   { title: "Configuración", icon: Settings, href: "/#" },
@@ -49,7 +49,7 @@ const Sidebar = ({
   className,
   defaultCollapsed = false,
 }: SidebarProps) => {
-  const { handleLogout } = SidebarViewModel();
+  const { handleLogout, redirectTo } = SidebarViewModel();
 
   const [isCollapsed, setIsCollapsed] = useState<boolean>(defaultCollapsed);
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
@@ -138,7 +138,7 @@ const Sidebar = ({
           </Button>
         </div>
 
-        <SidebarContent items={items} isCollapsed={isCollapsed} />
+        <SidebarContent items={items} isCollapsed={isCollapsed} redirectTo={redirectTo}/>
 
         {!isCollapsed && (
           <div className="mt-auto p-6 border-t border-slate-700/50">

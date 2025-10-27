@@ -7,8 +7,13 @@ const SidebarViewModel = () => {
     navigate("/login");
   };
 
+  const redirectTo = (href: string): void => {
+    navigate(href);
+  };
+
   return {
     handleLogout,
+    redirectTo, 
   };
 };
 
