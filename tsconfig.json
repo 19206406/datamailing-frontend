@@ -7,15 +7,16 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"], 
+      "@/*": ["./src/*"],
       "@Assets": ["src/assets"],
-      "@Adapters": ["src/adapters"], 
-      "@Components": ["src/components"], 
+      "@Adapters": ["src/adapters"],
+      "@Components": ["src/components"],
       "@Context": ["src/context"],
       "@Hooks": ["src/hooks"],
-      "@Middleware": ["src/middleware"], 
+      "@Middleware": ["src/middleware"],
       "@Pages": ["src/pages"],
-      "@Routes": ["src/routes"]
+      "@Routes": ["src/routes"],
+      "@Types": ["src/types"]
     }
   }
 }
