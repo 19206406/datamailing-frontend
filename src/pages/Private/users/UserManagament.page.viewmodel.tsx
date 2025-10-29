@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { UserManagament } from "@/types";
 
-const UserManagamentViewModel = () => {
+const UserManagamentPageViewModel = () => {
 
   const [users, setUsers] = useState<UserManagament[]>([
     {
@@ -113,4 +113,4 @@ const UserManagamentViewModel = () => {
   };
 };
 
-export default UserManagamentViewModel;
+export default UserManagamentPageViewModel;

@@ -1,10 +1,10 @@
-import MainMenu from "@/pages/Private/Home/MainMenu";
+import MainMenuPage from "@/pages/Private/Home/MainMenu.page";
 import { Routes, Route } from "react-router-dom";
 
 const MainMenuRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<MainMenu />} />
+      <Route path="/" element={<MainMenuPage />} />
     </Routes>
   );
 };

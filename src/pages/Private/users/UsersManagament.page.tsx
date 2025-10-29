@@ -1,12 +1,12 @@
 import { Input } from "@/components/ui/input";
 import { Plus, Search } from "lucide-react";
-import UserManagamentViewModel from "./UserManagament.viewmodel";
+import UserManagamentPageViewModel from "./UserManagament.page.viewmodel";
 import { Button } from "@/components/ui/button";
 import UsersTable from "./elements/UsersTable";
 import StatsCards from "./elements/StatsCards";
 import UserDialog from "./elements/UserDialog";
 
-const UsersManagament = () => {
+const UsersManagamentPage = () => {
   const {
     users,
     isDialogOpen,
@@ -20,7 +20,7 @@ const UsersManagament = () => {
     filteredUsers,
     handleDeleteUser,
     handleEditUser,
-  } = UserManagamentViewModel();
+  } = UserManagamentPageViewModel();
 
   return (
     <div className="min-h-screen bg-background">
@@ -74,4 +74,4 @@ const UsersManagament = () => {
   );
 };
 
-export default UsersManagament;
+export default UsersManagamentPage;

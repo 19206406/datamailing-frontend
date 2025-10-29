@@ -1,16 +1,5 @@
 import { useState } from "react";
-
-interface Email {
-  id: string;
-  sender: string;
-  subject: string;
-  preview: string;
-  date: string;
-  isRead: boolean;
-  isStarred: boolean;
-  labels: string[];
-  fullContent: string;
-}
+import type { Email } from "@/types";
 
 const mockEmails: Email[] = [
   {
@@ -82,7 +71,7 @@ const mockEmails: Email[] = [
 
 const UnresolvedEmailsViewModel = () => {
   const [selectedEmails, setSelectedEmails] = useState<string[]>([]);
-  const [emails, setEmails] = useState<Email[]>(mockEmails); 
+  const [emails, setEmails] = useState<Email[]>(mockEmails);
   const [currentView, setCurrentView] = useState<"list" | "detail">("list");
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
   const [hoveredRow, setHoveredRow] = useState<string | null>(null);

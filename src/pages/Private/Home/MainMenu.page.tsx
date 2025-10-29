@@ -1,7 +1,7 @@
 //import ResolvedEmails from "./emails/resolvedEmails/ResolvedEmails";
 import UnresolvedEmails from "./emails/unresolvedEmails/UnresolvedEmails";
 
-const MainMenu = () => {
+const MainMenuPage = () => {
   return (
     <div className="flex-1 p-6 overflow-y-auto">
       <div className="grid grid-cols-1 lg:grid-cols-1 gap-6 h-full">
@@ -31,4 +31,4 @@ const MainMenu = () => {
   );
 };
 
-export default MainMenu;
+export default MainMenuPage;

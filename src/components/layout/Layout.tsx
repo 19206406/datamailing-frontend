@@ -1,16 +1,7 @@
 import { cn } from "@/lib/utils";
 import Sidebar from "../sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
-
-interface AppLoyoutProps {
-  className?: string;
-  sidebarItems?: Array<{
-    title: string;
-    icon: React.ComponentType<{ className?: string }>;
-    href: string;
-    badge?: string;
-  }>;
-}
+import type { AppLoyoutProps } from "@/types";
 
 const LayoutApp = ({className, sidebarItems }: AppLoyoutProps) => {
   return (

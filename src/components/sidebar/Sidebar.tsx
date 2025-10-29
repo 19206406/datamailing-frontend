@@ -21,20 +21,7 @@ import {
   PopoverTrigger,
 } from "@radix-ui/react-popover";
 import SidebarViewModel from "./Sidebar.viewmodel";
-
-export interface SidebarItem {
-  title: string;
-  icon: React.ComponentType<{ className?: string }>;
-  href: string;
-  badge?: string;
-  isActive?: boolean;
-}
-
-interface SidebarProps {
-  items?: SidebarItem[];
-  className?: string;
-  defaultCollapsed?: boolean;
-}
+import type { SidebarItem, SidebarProps } from "@/types";
 
 const defaultItems: SidebarItem[] = [
   { title: "Dashboard", icon: Home, href: "/tablero/home" },

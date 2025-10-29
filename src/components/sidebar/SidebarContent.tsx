@@ -1,16 +1,7 @@
 import { ScrollArea } from "@radix-ui/react-scroll-area";
-import type { SidebarItem } from "./Sidebar";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
-/* import { Tooltip, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
-import { TooltipContent } from "@radix-ui/react-tooltip"; */
-
-interface SidebarContentProps {
-  items: SidebarItem[];
-  isCollapsed?: boolean;
-  isMobile?: boolean;
-  redirectTo: (href: string) => void;
-}
+import type { SidebarContentProps } from "@/types";
 
 const SidebarContent = ({
   items,
