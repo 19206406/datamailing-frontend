@@ -10,8 +10,16 @@ import {
 import type { UserManagament } from "@/types";
 import UsersTableViewModel from "./UserTable.viewmodel";
 import { Badge } from "@/components/ui/badge";
-import { Shield } from "lucide-react";
-import { permission } from "process";
+import { MoreHorizontal, Pencil, Shield, Trash2 } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@radix-ui/react-dropdown-menu";
+import { Button } from "@/components/ui/button";
 
 export interface UsersTableProps {
   users: UserManagament[];
@@ -98,7 +106,28 @@ const UsersTable = ({ users, onEdit, onDelete }: UsersTableProps) => {
                   {new Date(user.lastLogin).toLocaleDateString("es-ES")}
                 </TableCell>
                 <TableCell>
-                  
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button>
+                        <MoreHorizontal className="size-4" />
+                        <span className="sr-only">Abrir menú</span>
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end">
+                      <DropdownMenuLabel>Acciones</DropdownMenuLabel>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem onClick={() => onEdit(user)}>
+                        <Pencil className="mr-2 size-4" />
+                        Editar
+                      </DropdownMenuItem>
+                      <DropdownMenuItem
+                        onClick={() => onDelete(user.id)}
+                        className="text-destructive focus:text-destructive"
+                      >
+                        <Trash2 className="mr-2 size-4" />
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                 </TableCell>
               </TableRow>
             ))

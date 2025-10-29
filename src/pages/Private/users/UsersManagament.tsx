@@ -3,15 +3,23 @@ import { Plus, Search } from "lucide-react";
 import UserManagamentViewModel from "./UserManagament.viewmodel";
 import { Button } from "@/components/ui/button";
 import UsersTable from "./elements/UsersTable";
+import StatsCards from "./elements/StatsCards";
+import UserDialog from "./elements/UserDialog";
 
 const UsersManagament = () => {
   const {
+    users,
+    isDialogOpen,
+    handleDialogClose,
+    editingUser,
+    handleUpdateUser,
+    handleCreateUser,
     searchQuery,
     setSearchQuery,
     setIsDialogOpen,
     filteredUsers,
-    handleEditUser,
     handleDeleteUser,
+    handleEditUser,
   } = UserManagamentViewModel();
 
   return (
@@ -28,6 +36,7 @@ const UsersManagament = () => {
         </div>
 
         {/** Stats */}
+        <StatsCards users={users} />
 
         {/** Acciones */}
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -54,6 +63,12 @@ const UsersManagament = () => {
         />
 
         {/** UserDialog */}
+        <UserDialog
+          open={isDialogOpen}
+          onOpenChange={handleDialogClose}
+          onSubmit={editingUser ? handleUpdateUser : handleCreateUser}
+          user={editingUser}
+        />
       </div>
     </div>
   );

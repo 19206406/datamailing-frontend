@@ -39,8 +39,8 @@ interface SidebarProps {
 const defaultItems: SidebarItem[] = [
   { title: "Dashboard", icon: Home, href: "/tablero/home" },
   { title: "Usuarios", icon: User, href: "/tablero/users-managament" },
+  { title: "Reportes", icon: BarChart3, href: "/tablero/report", badge: "3" },
   { title: "Documentos", icon: FileText, href: "/#" },
-  { title: "Reportes", icon: BarChart3, href: "/#", badge: "3" },
   { title: "Configuración", icon: Settings, href: "/#" },
 ];
 
@@ -138,7 +138,11 @@ const Sidebar = ({
           </Button>
         </div>
 
-        <SidebarContent items={items} isCollapsed={isCollapsed} redirectTo={redirectTo}/>
+        <SidebarContent
+          items={items}
+          isCollapsed={isCollapsed}
+          redirectTo={redirectTo}
+        />
 
         {!isCollapsed && (
           <div className="mt-auto p-6 border-t border-slate-700/50">

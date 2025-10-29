@@ -12,7 +12,7 @@ const UsersTableViewModel = () => {
     }
   };
 
-  const getStatusBadgeVariant = (status: string): string => {
+  const getStatusBadgeVariant = (status: string) => {
     return status === "active" ? "default" : "secondary";
   };
 

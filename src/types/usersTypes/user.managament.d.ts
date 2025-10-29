@@ -9,3 +9,15 @@ export interface UserManagament {
   lastLogin: string;
 }
 
+export interface UserDialogProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  onSubmit: (
+    user: Omit<UserManagament, "id" | "createdAt" | "lastLogin">
+  ) => void;
+  user?: UserManagament | null;
+}
+
+export interface StatsCardsProps {
+  users: UserManagament[];
+}

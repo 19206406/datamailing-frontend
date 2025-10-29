@@ -98,15 +98,17 @@ const UserManagamentViewModel = () => {
   };
 
   return {
+    users, 
+    isDialogOpen, 
+    handleDialogClose, 
+    editingUser, 
+    handleUpdateUser, 
+    handleCreateUser,
     searchQuery, 
     setSearchQuery,
     setIsDialogOpen, 
     filteredUsers,
-    handleCreateUser,
-    handleUpdateUser,
     handleDeleteUser,
-    handleDialogClose,
-    isDialogOpen,
     handleEditUser,
   };
 };
